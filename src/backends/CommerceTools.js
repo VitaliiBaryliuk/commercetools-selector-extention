@@ -135,6 +135,6 @@ export class CommerceTools {
   }
 
   exportItem(item) {
-    return item.id;
+    return item;
   }
 }
