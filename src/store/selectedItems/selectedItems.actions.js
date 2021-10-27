@@ -63,7 +63,7 @@ export const getSelectedItems = () => async (dispatch, getState) => {
   try {
     const selectedSDKvalues = await SDK.field.getValue();
     
-    const ids = selectedSDKvalues.map(item => item.id);
+    const ids = selectedSDKvalues.map(item => item.props.id);
 
     const filteredIds = filter(ids, item => !isEmpty(item));
 
