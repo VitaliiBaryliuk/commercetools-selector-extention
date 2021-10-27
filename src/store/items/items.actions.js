@@ -8,7 +8,7 @@ export const SET_VALUE = 'SET_VALUE';
 export const setValue = selectedItems => async (dispatch, getState) => {
   const { SDK, backend } = getState();
   try {
-    await SDK.field.setValue(map(selectedItems, item => backend.exportItem(item)));
+    await SDK.field.setValue(map(selectedItems, item => backend.formatteItem(item)));
   } catch (e) {
     const error = get(e, '[0].data.keyword');
     if (!error) {
