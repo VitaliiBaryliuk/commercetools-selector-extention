@@ -137,12 +137,4 @@ export class CommerceTools {
   exportItem(item) {
     return item;
   }
-
-  formatteItem(item) {
-    return {
-      props: {
-        ...item
-      }
-    }
-  }
 }
