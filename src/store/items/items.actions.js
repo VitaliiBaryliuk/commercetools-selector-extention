@@ -8,7 +8,13 @@ export const SET_VALUE = 'SET_VALUE';
 export const setValue = selectedItems => async (dispatch, getState) => {
   const { SDK, backend } = getState();
   try {
-    await SDK.field.setValue(map(selectedItems, item => backend.exportItem({ id: item.id })));
+    await SDK.field.setValue(map(selectedItems, item => backend.exportItem({ 
+      component: 'ProductItem',
+      props: {
+        id: item.id,
+        key: item.key
+      }
+    })));
   } catch (e) {
     const error = get(e, '[0].data.keyword');
     if (!error) {

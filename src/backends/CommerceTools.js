@@ -87,7 +87,8 @@ export class CommerceTools {
       return {
         id: item.id,
         name: item.name[this.locale],
-        image: this.getImage(item.masterVariant)
+        image: this.getImage(item.masterVariant),
+        key: item.key
       }
     })
   }
